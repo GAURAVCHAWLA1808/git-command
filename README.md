@@ -1,1 +1,36 @@
 # git-command
+## basic command 
+- git init                                                   // for initialising 
+- git add .                                                  // adding changes into staging area 
+- git status                                                 // for checking the staging area
+- git commit -m" commit message "                            // for commit with commit message 
+- git remote add origin url                                  // adding the remote url as origin
+- git branch -M main                                         // for changing the master into main as default
+- git push origin main                                       // It doesn’t set upstream, just pushes to origin/main
+- git push -u origin main                                    // this will push changes to origin and also set it as upstream
+- git push -f origin main                                    // this will overwrite everything in the remote repo main
+- git branch                                                 // to see all the branches
+  -----------------------------------------------------------------------------------------------------------------------------
+- git log                                                    // to show commit history
+- git show <commit hash>                                     // to display a detail of a specific commit
+- git diff                                                   // Shows unstaged changes.
+- git diff --staged                                          // Shows changes in the staging area.
+- git restore <file>                                         // Discards changes in a file (before staging).
+- git reset HEAD <file>                                      // Unstages a file.
+- git rm --cached <file>                                     // Remove a file from Git without deleting it locally.
+## advanced command 
+- git pull origin main --rebase                               // This command pulls the latest changes from the remote main branch and applies your local commits on top of them.
+- git checkout -b <new-branch>                                // Creates and switches to a new branch.
+- git switch <branch>                                         // Switch branches (modern alternative to checkout).
+- git merge <branch>                                          // Merges another branch into the current branch.
+  -----------------------------------------------------------------------------------------------------------------------------
+- git rebase -i HEAD~<number>                                 // Interactive rebase for modifying history.
+- git stash                                                   // Saves changes temporarily without committing.
+- git stash pop                                               // Applies stashed changes.
+###  Remote Repository & Undo Commands
+- git remote -v                                               // Checks the configured remote repositories.
+- git fetch origin                                            // Fetches latest updates without merging.
+  -----------------------------------------------------------------------------------------------------------------------------
+- git reset --hard <commit-hash>                              // Resets the repo to a previous commit (dangerous, unrecoverable).
+- git revert <commit-hash>                                    // Creates a new commit that undoes a previous one (safer than reset).
+- git cherry-pick <commit-hash>                               // Applies a specific commit from another branch.
