@@ -1,0 +1,86 @@
+git pull origin main --rebase Explained 🚀
+
+This command pulls the latest changes from the remote main branch and applies your local commits on top of them. It ensures a linear commit history by rebasing instead of merging.
+
+Breakdown of the Command
+
+git pull origin main → Fetches changes from origin/main and merges them into your local branch.
+
+--rebase → Instead of merging, it:
+
+Fetches remote changes
+
+Moves your local commits aside
+
+Applies remote commits first
+
+Reapplies your local commits on top
+
+Why Use --rebase Instead of Merge?
+
+✅ Keeps history clean → Avoids unnecessary merge commits.✅ Makes collaboration smoother → Ensures your changes are always on top.✅ Avoids merge conflicts → Less cluttered commit history.
+
+Example Workflow
+
+Imagine you and your team are working on the main branch. While you were making changes locally, new commits were pushed to the remote repository. Instead of merging, you want to rebase to maintain a clean history.
+
+Scenario Before Rebase
+
+Your local branch (main):
+
+A - B - C (your local commits)  
+     \  
+      D - E - F (new commits on origin/main)  
+
+If you run a normal git pull origin main, Git will create a merge commit, making the history messy.
+
+After Running git pull origin main --rebase
+
+Git will:
+
+Fetch remote commits (D - E - F).
+
+Move your commits (A - B - C) aside.
+
+Apply remote commits first.
+
+Reapply your commits on top.
+
+Resulting history:
+
+D - E - F - A - B - C (rebased commits on top)
+
+Now, your commits are neatly applied on top of the latest remote changes.
+
+What If There Are Conflicts?
+
+During rebase, Git may detect conflicts. If that happens:
+
+Git will pause and show conflict markers in the affected files.
+
+Fix conflicts manually, then run:
+
+git add <conflicted-file>
+git rebase --continue
+
+If you want to cancel the rebase:
+
+git rebase --abort
+
+Final Step: Push the Changes
+
+Since rebase rewrites history, you may need to force push:
+
+git push origin main --force-with-lease
+
+(Safer than -f as it prevents overwriting others' changes.)
+
+TL;DR
+
+git pull origin main --rebase ensures a clean, linear history.
+
+It applies remote changes first, then your local commits on top.
+
+If conflicts arise, resolve them and continue the rebase.
+
+
