@@ -34,3 +34,5 @@
 - git reset --hard <commit-hash>                              // Resets the repo to a previous commit (dangerous, unrecoverable).
 - git revert <commit-hash>                                    // Creates a new commit that undoes a previous one (safer than reset).
 - git cherry-pick <commit-hash>                               // Applies a specific commit from another branch.
+-----------------------------------------------------------------------------------------------------------------
+- caffeinate                                                  // it can be used before any command to keep the mac awake till the command run 
