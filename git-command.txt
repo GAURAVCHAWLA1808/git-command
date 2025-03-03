@@ -36,3 +36,10 @@
 - git cherry-pick <commit-hash>                               // Applies a specific commit from another branch.
 -----------------------------------------------------------------------------------------------------------------
 - caffeinate                                                  // it can be used before any command to keep the mac awake till the command run 
+- git clone --depth=1 https://github.com/repo.git             // in this -- depth=1 Clone without full history (Shallow Clone)
+- git fetch --unshallow                                       // u can later unshallow to get the whole history 
+- git clone --branch <branch_name> --single-branch https://github.com/repo.git
+                                                              // to only clone a specific branch 
+- git ls-remote --heads https://github.com/repo.git           // it gives u list of all remote branches without cloning
+- git reset --soft HEAD~1                                     // undo the last commit but keep the changes 
+
