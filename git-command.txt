@@ -2,6 +2,7 @@
 ## basic command 
 - git init                                                   // for initialising 
 - git add .                                                  // adding changes into staging area 
+- git add --force yourfile.txt                               // adding changes of txt into the staging area 
 - git status                                                 // for checking the staging area
 - git commit -m" commit message "                            // for commit with commit message 
 - git remote add origin url                                  // adding the remote url as origin
